@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {Dispatch, SetStateAction, useState} from 'react'
 import { v1 } from 'uuid'
 import s2 from '../../s1-main/App.module.css'
 import GreetingContainer from './GreetingContainer'
@@ -17,22 +17,25 @@ import GreetingContainer from './GreetingContainer'
 * 11 - сделать стили в соответствии с дизайном
 * */
 
-// types
 export type UserType = {
-    _id: any // need to fix any
-    name: any // need to fix any
+    _id: string
+    name: string
 }
 
-export const pureAddUserCallback = (name: any, setUsers: any, users: any) => { // need to fix any
-    const user = { // need to fix
+export const pureAddUserCallback = (name: string, setUsers: Dispatch<SetStateAction<UserType[]>> , users: UserType[]) => {
+    if (name.trim() !== "") {
+        const user: UserType = {
+            _id: v1(),
+            name: name.trim(),
+        };
+        setUsers([...users, user]);
     }
-    setUsers([...users, user])
 }
 
 const HW3 = () => {
-    const [users, setUsers] = useState<any>([]) // need to fix any
+    const [users, setUsers] = useState<UserType[]>([])
 
-    const addUserCallback = (name: any) => { // need to fix any
+    const addUserCallback = (name: string) => {
         pureAddUserCallback(name, setUsers, users)
     }
 
