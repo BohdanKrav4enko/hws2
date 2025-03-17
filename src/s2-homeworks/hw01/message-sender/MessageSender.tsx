@@ -36,8 +36,12 @@ const MessageSender = (props: any) => {
     }
 
     const onKeyDown = (e: any) => {
-        e.key === 'Enter' && e.shiftKey && addMessage()
-    }
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            addMessage();
+        }
+    };
+
 
     return (
         <>
