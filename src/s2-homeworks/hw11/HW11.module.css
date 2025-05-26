@@ -1,8 +1,23 @@
 .container {
+    margin-top: 70px;
 }
 
 .wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
 }
-
+.spanWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    width: 30px;
+}
 .number {
+    font-family: Montserrat, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #000000;
 }
