@@ -5,7 +5,6 @@
 }
 
 .responseContainer {
-    position: relative;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -49,11 +48,8 @@
 }
 
 .info {
-    position: absolute;
-    top: 0;
-    left: 0;
     font-family: Montserrat, sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 100%;
     letter-spacing: 0;
     font-weight: 500;
