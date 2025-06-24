@@ -1,27 +1,64 @@
 .tech {
-    width: 50vw;
+    flex: 1;
 }
 
 .developer {
-
+    flex: 1;
 }
 
 .techHeader {
-    width: 50vw;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .developerHeader {
-
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 4px;
 }
 
 .row {
     display: flex;
+    padding: 10px 16px;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .rowHeader {
     display: flex;
+    background-color: #f0f0f0;
+    font-weight: 600;
+    text-transform: capitalize;
+    padding: 8px 16px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
 }
-
+.tableWrapper {
+    position: relative;
+}
+.loadingOverlay {
+    opacity: 0.4;
+    pointer-events: none;
+    user-select: none;
+}
 .loading {
-
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 1.5s linear infinite;
+    width: 100px;
+    height: 100px;
+    z-index: 10;
+    pointer-events: none;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }

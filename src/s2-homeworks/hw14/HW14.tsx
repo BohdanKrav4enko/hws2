@@ -34,22 +34,17 @@ const HW14 = () => {
         setLoading(true)
         getTechs(value)
             .then((res) => {
-                // делает студент
+                if (res?.data?.techs) {
+                    setTechs(res.data.techs)
+                }
 
-                // сохранить пришедшие данные
-
-                //
             })
+            .finally(() => setLoading(false))
     }
 
     const onChangeText = (value: string) => {
         setFind(value)
-        // делает студент
-
-        // добавить/заменить значение в квери урла
-        // setSearchParams(
-
-        //
+        setSearchParams({find: value})
     }
 
     useEffect(() => {
@@ -69,18 +64,21 @@ const HW14 = () => {
             <div className={s2.hwTitle}>Homework №14</div>
 
             <div className={s2.hw}>
-                <SuperDebouncedInput
-                    id={'hw14-super-debounced-input'}
-                    value={find}
-                    onChangeText={onChangeText}
-                    onDebouncedChange={sendQuery}
-                />
+                <div className={s.container}>
+                    <SuperDebouncedInput
+                        className={s.styledInput}
+                        id={'hw14-super-debounced-input'}
+                        value={find}
+                        onChangeText={onChangeText}
+                        onDebouncedChange={sendQuery}
+                    />
 
-                <div id={'hw14-loading'} className={s.loading}>
-                    {isLoading ? '...ищем' : <br/>}
+                    <div id={'hw14-loading'} className={s.loading}>
+                        {isLoading ? '...ищем' : <br/>}
+                    </div>
+
+                    {mappedTechs}
                 </div>
-
-                {mappedTechs}
             </div>
         </div>
     )

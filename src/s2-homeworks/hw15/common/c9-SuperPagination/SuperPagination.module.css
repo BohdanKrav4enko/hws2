@@ -1,11 +1,11 @@
 .pagination {
     display: flex;
+    align-items: center;
+    margin-bottom: 36px;
+    gap: 10px;
 }
 
-.text1 {
-
-}
-
-.text2 {
-
+.text1, .text2 {
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
 }

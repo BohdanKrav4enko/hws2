@@ -1,7 +1,30 @@
 .tech {
-
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
 }
 
 .loading {
+}
 
+.container {
+    width: 468px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.styledInput{
+    width: 468px;
+    height: 36px;
+    border-radius: 2px;
+    border: 1px solid #0066CC;
+    padding-left: 12px;
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
+}
+.styledInput:focus{
+    outline: none;
+    border-color: #3399FF;
+    box-shadow: 0 0 4px rgba(0, 102, 204, 0.5);
 }
